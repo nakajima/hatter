@@ -1,15 +1,18 @@
 $LOAD_PATH << File.dirname(__FILE__)
 
-require 'rubygems'
-require 'sinatra'
-require 'sinatras-hat'
+require 'lib/support'
 
-load 'lib/article.rb'
-
-class MountedApp < Sinatra::Base
-  set :app_file, __FILE__
+class Hatter < Sinatra::Base
+  configure do
+    load 'lib/article.rb'
+    load 'lib/comment.rb'
+  end
   
   mount Article
+end
+
+Hatter.class_eval do
+  set :app_file, __FILE__
   
-  run!
+  run! if __FILE__ == $0
 end

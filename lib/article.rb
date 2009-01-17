@@ -1,10 +1,9 @@
-require 'acts_as_fu'
-include ActsAsFu
+build_model(:articles) do
+  string :name
+  text :body
 
-configure do
-  build_model(:articles) do
-    string :name
-    text :body
-  end
+  has_many :comments
+  
+  validates_presence_of :name
+  validates_presence_of :body
 end
-

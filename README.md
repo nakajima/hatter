@@ -6,7 +6,7 @@ An example app using Sinatra's Hat.
 
 Install the dependencies:
 
-    gem install sinatra-sinatra nakajima-sinatras-hat acts_as_fu
+    gem install sinatra-sinatra nakajima-sinatras-hat acts_as_fu nakajima-semi-formal
 
 Start the app:
 

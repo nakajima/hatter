@@ -7,6 +7,9 @@
   <div>
     <%= article.body %>
   </div>
+  <small>
+    <a href="/articles/<%= article.to_param %>/edit">Click here to edit</a>
+  </small>
   <hr>
 <% end %>
 

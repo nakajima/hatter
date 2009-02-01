@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 18px;
+  font-family: Helvetica;
+  padding: 1em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+ul li {
+  margin-left: 1em;
+}
+
+label {
+  margin: 0 0 1em;
+}
+
+label, label span {
+  display: block;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input[type="text"], textarea {
+  font-size: 18px;
+  padding: 2px;
+  width: 500px;
+}
+
+textarea {
+  height: 400px;
+  font-family: Courier;
+}
+
+.article {
+  margin: 1em 0;
+}
+
+.article > div {
+  margin: 0.4em;

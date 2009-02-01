@@ -10,6 +10,7 @@ require 'acts_as_fu'
 include ActsAsFu
 
 class Hatter < Sinatra::Base
+  set :static, true
   set :logging, true
   set :app_file, __FILE__
   

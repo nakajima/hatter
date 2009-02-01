@@ -1,12 +1,12 @@
-<h2><%= @article.name %></h2>
-<div>
-  <%= @article.body %>
+<div class="article">
+  <h2><%= @article.name %></h2>
+  <div>
+    <%= @article.body_html %>
+  </div>
+
+  <small>
+    <a href="/articles/<%= @article.to_param %>/edit">Click here to edit</a>
+  </small>
 </div>
-
-<small>
-  <a href="/articles/<%= @article.to_param %>/edit">Click here to edit</a>
-</small>
-
-<hr>
 
 <a href="/articles">Back to articles</a>

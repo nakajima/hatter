@@ -1,16 +1,13 @@
-<h1>Articles!</h1>
-
-<hr>
+<h1>Articles <small><a href="/articles/new">(add one)</a></small></h1>
 
 <% @articles.each do |article| %>
-  <h2><a href="/articles/<%= article.to_param %>"><%= article.name %></a></h2>
-  <div>
-    <%= article.body %>
+  <div class="article">
+    <h2><a href="/articles/<%= article.to_param %>"><%= article.name %></a></h2>
+    <div><%= article.body_html %></div>
+    <small>
+      <a href="/articles/<%= article.to_param %>/edit">Click here to edit</a>
+    </small>
   </div>
-  <small>
-    <a href="/articles/<%= article.to_param %>/edit">Click here to edit</a>
-  </small>
-  <hr>
 <% end %>
 
-<a href="/articles/new">Create one!</a>
+<p><a href="/articles/new">Create a new article.</a></p>

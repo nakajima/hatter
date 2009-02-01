@@ -1,5 +1,7 @@
 <h2>Editing "<%= @article.name %>"</h2>
 
+<p>(Markdown enabled.)</p>
+
 <%= form_for(@article) %>
 
-<a href="/articles/<%= @article.to_param %>">Back to article</a>
+<p><a href="/articles/<%= @article.to_param %>">Back to article</a></p>

@@ -1,5 +1,3 @@
-<h1>Articles <small><a href="/articles/new">(add one)</a></small></h1>
-
 <% @articles.each do |article| %>
   <div class="article">
     <h2><a href="/articles/<%= article.to_param %>"><%= article.name %></a></h2>

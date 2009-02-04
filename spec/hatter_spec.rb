@@ -20,4 +20,22 @@ describe Hatter do
       response.body.should == Article.all.to_xml
     end
   end
+  
+  describe "mount Comment" do
+    before(:each) do
+      @article = create_article
+    end
+    
+    describe "creating a comment" do
+      def do_post
+        post "/articles/#{@article.to_param}/comments", "comment[body]" => "Hello!"
+      end
+      
+      it "redirects to article after create" do
+        proc {
+          do_post
+        }.should change(@article.comments, :count)
+      end
+    end
+  end
 end

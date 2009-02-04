@@ -9,6 +9,10 @@ body {
   padding: 1em;
 }
 
+h1 {
+  margin-bottom: 0.4em;
+}
+
 p {
   margin: 1em 0;
 }

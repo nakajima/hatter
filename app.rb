@@ -23,7 +23,13 @@ class Hatter < Sinatra::Base
   
   get('/') { redirect('/articles') }
   
-  mount Article
+  mount Article do
+    mount Comment do
+      after :create do |on|
+        on.success { |comment| redirect("/articles/#{comment.article.to_param}") }
+      end
+    end
+  end
 end
 
 Hatter.run! if __FILE__ == $0

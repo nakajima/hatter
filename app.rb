@@ -9,6 +9,13 @@ require 'acts_as_fu'
 
 include ActsAsFu
 
+class NilClass
+  def include?(*args)
+    puts caller
+    super
+  end
+end
+
 class Hatter < Sinatra::Base
   set :static, true
   set :logging, true
@@ -23,13 +30,7 @@ class Hatter < Sinatra::Base
   
   get('/') { redirect('/articles') }
   
-  mount Article do
-    mount Comment do
-      after :create do |on|
-        on.success { |comment| redirect("/articles/#{comment.article.to_param}") }
-      end
-    end
-  end
+  mount Article
 end
 
 Hatter.run! if __FILE__ == $0

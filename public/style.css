@@ -9,6 +9,21 @@ body {
   padding: 1em;
 }
 
+a {
+  color: black;
+  background: #eee;
+  text-decoration: none;
+}
+
+a:hover {
+  background: #222;
+  color: white;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
 h1 {
   margin-bottom: 0.4em;
 }
@@ -50,3 +65,17 @@ textarea {
 
 .article > div {
   margin: 0.4em;
+}
+
+.comments {
+  margin-top: 1em;
+}
+
+.comments textarea {
+  height: 200px;
+}
+
+#all {
+  width: 600px;
+  margin: 0 auto;
+}

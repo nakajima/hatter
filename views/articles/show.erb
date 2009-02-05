@@ -5,25 +5,34 @@
   </div>
 
   <small>
-    <a href="/articles/<%= @article.to_param %>/edit">Click here to edit</a>
-  </small>
-  
-  <div class="comments">
-    <h3>Comments</h3>
-    
-    <% @article.comments.each do |comment| %>
-      <div class="comment">
-        <%= comment.body %>
-      </div>
-    <% end %>
-    
-    <form action="/articles/<%= @article.to_param %>/comments" method="post">
-      <h4>Add one.</h4>
-      <span>Body</span>
-      <textarea name="comment[body]"></textarea>
-      <p><input type="submit" value="Add this comment."></p>
+    <form action="/articles/<%= @article.to_param %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <a href="/articles/<%= @article.to_param %>/edit">Click here to edit</a> | 
+      <input type="submit" value="Delete!">
     </form>
-  </div>
+  </small>
 </div>
+<div class="comments">
+  <h3>Comments</h3>
+  
+  <% if @article.comments.empty? %>
+  <p>Nobody has left a comment yet.</p>
+  <% end %>
+  
+  <% @article.comments.each do |comment| %>
+    <div class="comment">
+      <%= comment.body %>
+    </div>
+  <% end %>
+  
+  <form action="/articles/<%= @article.to_param %>/comments" method="post">
+    <label>
+      <span>Add a comment:</span>
+      <textarea name="comment[body]"></textarea>
+    </label>
+    <p><input type="submit" value="Add this comment."></p>
+  </form>
+</div>
+
 
 <a href="/articles">Back to articles</a>
